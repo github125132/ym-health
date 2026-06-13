@@ -1,0 +1,101 @@
+package com.ymdjk.module.admin;
+
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.ymdjk.common.PageResult;
+import com.ymdjk.common.Result;
+import com.ymdjk.module.content.entity.Content;
+import com.ymdjk.module.content.mapper.ContentMapper;
+import com.ymdjk.module.finance.entity.PayLog;
+import com.ymdjk.module.finance.entity.Withdraw;
+import com.ymdjk.module.finance.mapper.PayLogMapper;
+import com.ymdjk.module.finance.mapper.WithdrawMapper;
+import com.ymdjk.module.member.entity.Member;
+import com.ymdjk.module.member.mapper.MemberMapper;
+import com.ymdjk.module.order.entity.Order;
+import com.ymdjk.module.order.mapper.OrderMapper;
+import com.ymdjk.module.product.entity.Product;
+import com.ymdjk.module.product.mapper.ProductMapper;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/v1/admin")
+@RequiredArgsConstructor
+public class AdminCrudController {
+    private final ProductMapper productMapper;
+    private final OrderMapper orderMapper;
+    private final MemberMapper memberMapper;
+    private final PayLogMapper payLogMapper;
+    private final WithdrawMapper withdrawMapper;
+    private final ContentMapper contentMapper;
+
+    @GetMapping("/products")
+    public Result<?> listProducts(@RequestParam(defaultValue = "1") int page,
+                                  @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(productMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @PostMapping("/products")
+    public Result<Void> saveProduct(@RequestBody Product product) {
+        if (product.getId() != null) productMapper.updateById(product);
+        else productMapper.insert(product);
+        return Result.success();
+    }
+
+    @DeleteMapping("/products/{id}")
+    public Result<Void> deleteProduct(@PathVariable Integer id) {
+        productMapper.deleteById(id);
+        return Result.success();
+    }
+
+    @GetMapping("/orders")
+    public Result<?> listOrders(@RequestParam(defaultValue = "1") int page,
+                                @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(orderMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @GetMapping("/members")
+    public Result<?> listMembers(@RequestParam(defaultValue = "1") int page,
+                                 @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(memberMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @GetMapping("/finance")
+    public Result<?> listFinance(@RequestParam(defaultValue = "1") int page,
+                                 @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(payLogMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @GetMapping("/withdraw")
+    public Result<?> listWithdraw(@RequestParam(defaultValue = "1") int page,
+                                  @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(withdrawMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @PostMapping("/withdraw/{id}/approve")
+    public Result<Void> approveWithdraw(@PathVariable Integer id) {
+        Withdraw w = withdrawMapper.selectById(id);
+        if (w != null) { w.setStatus(1); withdrawMapper.updateById(w); }
+        return Result.success();
+    }
+
+    @GetMapping("/content")
+    public Result<?> listContent(@RequestParam(defaultValue = "1") int page,
+                                 @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(contentMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @PostMapping("/content")
+    public Result<Void> saveContent(@RequestBody Content content) {
+        if (content.getId() != null) contentMapper.updateById(content);
+        else contentMapper.insert(content);
+        return Result.success();
+    }
+
+    private <T> PageResult<T> pageResult(Page<T> p) {
+        PageResult<T> r = new PageResult<>();
+        r.setRecords(p.getRecords()); r.setTotal(p.getTotal());
+        r.setPage(p.getCurrent()); r.setPageSize(p.getSize());
+        return r;
+    }
+}
