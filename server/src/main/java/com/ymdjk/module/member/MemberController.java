@@ -23,4 +23,10 @@ public class MemberController {
         memberService.register(req.getPhone(), req.getPassword(), req.getRealName(), req.getRecommendId());
         return Result.success();
     }
+
+    @PostMapping("/forgot-password")
+    public Result<Void> forgotPassword(@RequestParam String phone) {
+        memberService.resetPassword(phone);
+        return Result.success();
+    }
 }

@@ -54,4 +54,11 @@ public class MemberService {
         member.setAddDate(java.time.LocalDateTime.now());
         memberMapper.insert(member);
     }
+
+    public void resetPassword(String phone) {
+        Member member = findByPhone(phone);
+        if (member == null) throw new IllegalArgumentException("手机号未注册");
+        member.setPassword(passwordEncoder.encode("123456"));
+        memberMapper.updateById(member);
+    }
 }
