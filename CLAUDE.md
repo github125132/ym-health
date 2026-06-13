@@ -1,7 +1,7 @@
 # 有梦健康商城 — 项目约定
 
 ## 技术栈
-- **后端**: Spring Boot 3.2 + JDK 17 + MyBatis-Plus + MySQL 8
+- **后端**: Spring Boot 3.2 + JDK 21 + MyBatis-Plus + MySQL 8
 - **前端**: Vue 3 + Element Plus + Vite + Pinia
 - **数据库**: MySQL 8 (数据库名 `youmengjiankang`)
 - **认证**: JWT (access_token 2h + refresh_token 7d)
