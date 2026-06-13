@@ -1,0 +1,8 @@
+node_modules/
+.git/
+legacy/
+*.log
+dist/
+target/
+.idea/
+.vs/
