@@ -12,8 +12,10 @@
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import request from '../../api/request'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
+const router = useRouter()
 const list = ref([])
 const load = async () => {
   const res = await request.get('/cart')
@@ -21,6 +23,15 @@ const load = async () => {
 }
 const update = async (item) => { await request.put(`/cart/${item.id}`, null, { params: { quantity: item.quantity } }) }
 const remove = async (item) => { await request.delete(`/cart/${item.id}`); ElMessage.success('已删除'); load() }
-const checkout = () => {}
+const checkout = async () => {
+  ElMessageBox.prompt('收货地址', '填写收货信息', {
+    inputPattern: /.{5,}/,
+    inputErrorMessage: '请填写完整地址'
+  }).then(async ({ value }) => {
+    await request.post('/orders', { receiverAddr: value })
+    ElMessage.success('下单成功')
+    router.push('/orders')
+  }).catch(() => {})
+}
 onMounted(load)
 </script>
