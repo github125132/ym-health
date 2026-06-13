@@ -3,6 +3,7 @@ package com.ymdjk.module.product.entity;
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Data
 @TableName("ym_product")
@@ -25,4 +26,6 @@ public class Product {
     private Integer sortOrder;
     private Integer views;
     private String specs;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }
