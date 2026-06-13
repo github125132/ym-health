@@ -1,0 +1,1 @@
+ALTER TABLE ym_order ADD COLUMN shipped_at DATETIME DEFAULT NULL COMMENT '发货时间' AFTER paid_at;

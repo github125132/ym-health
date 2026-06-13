@@ -26,5 +26,6 @@ public class Order {
     private String expressNo;
     private String remark;
     private LocalDateTime paidAt;
+    private LocalDateTime shippedAt;
     private LocalDateTime createdAt;
 }

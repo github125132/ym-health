@@ -2,6 +2,7 @@ package com.ymdjk.module.order;
 
 import com.ymdjk.common.Result;
 import com.ymdjk.module.order.dto.CreateOrderRequest;
+import com.ymdjk.module.order.dto.ShipRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -34,6 +35,18 @@ public class OrderController {
     @PutMapping("/{orderNo}/cancel")
     public Result<Void> cancel(@PathVariable String orderNo) {
         orderService.cancelOrder(orderNo);
+        return Result.success();
+    }
+
+    @PutMapping("/{orderNo}/ship")
+    public Result<Void> ship(@PathVariable String orderNo, @Valid @RequestBody ShipRequest req) {
+        orderService.shipOrder(orderNo, req);
+        return Result.success();
+    }
+
+    @PutMapping("/{orderNo}/confirm")
+    public Result<Void> confirm(@PathVariable String orderNo) {
+        orderService.confirmReceipt(orderNo);
         return Result.success();
     }
 }

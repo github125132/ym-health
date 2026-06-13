@@ -6,6 +6,7 @@ import com.ymdjk.common.PageResult;
 import com.ymdjk.module.cart.entity.Cart;
 import com.ymdjk.module.cart.mapper.CartMapper;
 import com.ymdjk.module.order.dto.CreateOrderRequest;
+import com.ymdjk.module.order.dto.ShipRequest;
 import com.ymdjk.module.order.entity.Order;
 import com.ymdjk.module.order.entity.OrderItem;
 import com.ymdjk.module.order.mapper.OrderItemMapper;
@@ -102,6 +103,27 @@ public class OrderService {
         if (order == null) throw new IllegalArgumentException("订单不存在");
         if (order.getOrderStatus() != 0) throw new IllegalArgumentException("只能取消待付款订单");
         order.setOrderStatus(4);
+        orderMapper.updateById(order);
+    }
+
+    public void shipOrder(String orderNo, ShipRequest req) {
+        Order order = getOrder(orderNo);
+        if (order == null) throw new IllegalArgumentException("订单不存在");
+        if (order.getOrderStatus() != 1) throw new IllegalArgumentException("只能发货已付款订单");
+        order.setOrderStatus(2);
+        order.setDeliveryStatus(1);
+        order.setExpressCompany(req.getExpressCompany());
+        order.setExpressNo(req.getExpressNo());
+        order.setShippedAt(LocalDateTime.now());
+        orderMapper.updateById(order);
+    }
+
+    public void confirmReceipt(String orderNo) {
+        Order order = getOrder(orderNo);
+        if (order == null) throw new IllegalArgumentException("订单不存在");
+        if (order.getOrderStatus() != 2) throw new IllegalArgumentException("只能确认已发货订单");
+        order.setOrderStatus(3);
+        order.setDeliveryStatus(2);
         orderMapper.updateById(order);
     }
 }
