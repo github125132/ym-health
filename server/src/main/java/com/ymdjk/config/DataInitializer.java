@@ -75,7 +75,7 @@ public class DataInitializer implements CommandLineRunner {
                 Product product = new Product();
                 product.setTitle(p[0]);
                 product.setCategoryId(Integer.parseInt(p[1]));
-                product.setPurl("/img/default.png");
+                product.setPurl("");
                 product.setBasePrice(new BigDecimal(p[2]));
                 product.setStock(Integer.parseInt(p[3]));
                 product.setStatus(1);
