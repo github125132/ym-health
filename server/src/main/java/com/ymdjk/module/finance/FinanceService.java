@@ -8,8 +8,10 @@ import com.ymdjk.module.finance.mapper.PayLogMapper;
 import com.ymdjk.module.finance.mapper.WithdrawMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class FinanceService {
@@ -29,5 +31,11 @@ public class FinanceService {
         w.setBankName(bankName); w.setBankCard(bankCard);
         w.setStatus(0); w.setCreatedAt(LocalDateTime.now());
         withdrawMapper.insert(w);
+    }
+
+    public List<Withdraw> listWithdraw(String userId) {
+        return withdrawMapper.selectList(
+            new LambdaQueryWrapper<Withdraw>().eq(Withdraw::getUserId, userId)
+                .orderByDesc(Withdraw::getCreatedAt));
     }
 }

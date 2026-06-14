@@ -23,4 +23,9 @@ public class FinanceController {
         financeService.submitWithdraw(auth.getName(), amount, bankName, bankCard);
         return Result.success();
     }
+
+    @GetMapping("/withdraw/list")
+    public Result<?> withdrawList(Authentication auth) {
+        return Result.success(financeService.listWithdraw(auth.getName()));
+    }
 }

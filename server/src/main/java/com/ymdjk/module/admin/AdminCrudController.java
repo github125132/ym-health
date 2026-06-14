@@ -19,8 +19,10 @@ import com.ymdjk.module.content.mapper.MessageMapper;
 import com.ymdjk.module.product.entity.Category;
 import com.ymdjk.module.product.mapper.CategoryMapper;
 import com.ymdjk.module.finance.entity.PayLog;
+import com.ymdjk.module.finance.entity.UserBalance;
 import com.ymdjk.module.finance.entity.Withdraw;
 import com.ymdjk.module.finance.mapper.PayLogMapper;
+import com.ymdjk.module.finance.mapper.UserBalanceMapper;
 import com.ymdjk.module.finance.mapper.WithdrawMapper;
 import com.ymdjk.module.member.entity.Member;
 import com.ymdjk.module.member.mapper.MemberMapper;
@@ -41,6 +43,7 @@ public class AdminCrudController {
     private final MemberMapper memberMapper;
     private final PayLogMapper payLogMapper;
     private final WithdrawMapper withdrawMapper;
+    private final UserBalanceMapper userBalanceMapper;
     private final ContentMapper contentMapper;
     private final CategoryMapper categoryMapper;
     private final AdMapper adMapper;
@@ -96,7 +99,26 @@ public class AdminCrudController {
     @PostMapping("/withdraw/{id}/approve")
     public Result<Void> approveWithdraw(@PathVariable Integer id) {
         Withdraw w = withdrawMapper.selectById(id);
-        if (w != null) { w.setStatus(1); withdrawMapper.updateById(w); }
+        if (w != null && w.getStatus() == 0) {
+            w.setStatus(1);
+            withdrawMapper.updateById(w);
+            UserBalance ub = userBalanceMapper.selectOne(
+                new LambdaQueryWrapper<UserBalance>().eq(UserBalance::getUserId, w.getUserId()));
+            if (ub != null && ub.getBalance().compareTo(w.getAmount()) >= 0) {
+                ub.setBalance(ub.getBalance().subtract(w.getAmount()));
+                userBalanceMapper.updateById(ub);
+            }
+        }
+        return Result.success();
+    }
+
+    @PostMapping("/withdraw/{id}/reject")
+    public Result<Void> rejectWithdraw(@PathVariable Integer id) {
+        Withdraw w = withdrawMapper.selectById(id);
+        if (w != null && w.getStatus() == 0) {
+            w.setStatus(2);
+            withdrawMapper.updateById(w);
+        }
         return Result.success();
     }
 
