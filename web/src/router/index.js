@@ -17,6 +17,9 @@ const routes = [
   { path: '/member/finance', component: () => import('../views/finance/PayLog.vue'), meta: { requiresAuth: true } },
   { path: '/member/withdraw', component: () => import('../views/finance/Withdraw.vue'), meta: { requiresAuth: true } },
   { path: '/member/team', component: () => import('../views/member/Team.vue'), meta: { requiresAuth: true } },
+  { path: '/member/address', component: () => import('../views/member/Address.vue'), meta: { requiresAuth: true } },
+  { path: '/member/favorites', component: () => import('../views/member/Favorites.vue'), meta: { requiresAuth: true } },
+  { path: '/member/edit-profile', component: () => import('../views/member/EditProfile.vue'), meta: { requiresAuth: true } },
 ]
 
 const router = createRouter({ history: createWebHistory(), routes })

@@ -61,4 +61,12 @@ public class MemberService {
         member.setPassword(passwordEncoder.encode("123456"));
         memberMapper.updateById(member);
     }
+
+    public void changePassword(String userId, String oldPassword, String newPassword) {
+        Member member = findByUserId(userId);
+        if (member == null) throw new IllegalArgumentException("用户不存在");
+        if (!passwordEncoder.matches(oldPassword, member.getPassword())) throw new IllegalArgumentException("旧密码错误");
+        member.setPassword(passwordEncoder.encode(newPassword));
+        memberMapper.updateById(member);
+    }
 }
