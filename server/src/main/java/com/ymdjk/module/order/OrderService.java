@@ -131,6 +131,13 @@ public class OrderService {
         orderMapper.updateById(order);
     }
 
+    public List<OrderItem> getItems(String orderNo) {
+        Order order = getOrder(orderNo);
+        if (order == null) throw new IllegalArgumentException("订单不存在");
+        return orderItemMapper.selectList(
+            new LambdaQueryWrapper<OrderItem>().eq(OrderItem::getOrderId, order.getId()));
+    }
+
     public void confirmReceipt(String orderNo) {
         Order order = getOrder(orderNo);
         if (order == null) throw new IllegalArgumentException("订单不存在");

@@ -32,6 +32,11 @@ public class OrderController {
         return Result.success(orderService.getOrder(orderNo));
     }
 
+    @GetMapping("/items")
+    public Result<?> items(@RequestParam String orderNo) {
+        return Result.success(orderService.getItems(orderNo));
+    }
+
     @PutMapping("/{orderNo}/cancel")
     public Result<Void> cancel(@PathVariable String orderNo) {
         orderService.cancelOrder(orderNo);

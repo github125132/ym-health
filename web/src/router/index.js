@@ -21,6 +21,9 @@ const routes = [
   { path: '/member/address', component: () => import('../views/member/Address.vue'), meta: { requiresAuth: true } },
   { path: '/member/favorites', component: () => import('../views/member/Favorites.vue'), meta: { requiresAuth: true } },
   { path: '/member/edit-profile', component: () => import('../views/member/EditProfile.vue'), meta: { requiresAuth: true } },
+  { path: '/ranking', component: () => import('../views/member/Ranking.vue') },
+  { path: '/poster', component: () => import('../views/member/Poster.vue'), meta: { requiresAuth: true } },
+  { path: '/review/:orderNo', component: () => import('../views/order/WriteReview.vue'), meta: { requiresAuth: true } },
   { path: '/message', component: () => import('../views/shop/Message.vue') },
 ]
 
