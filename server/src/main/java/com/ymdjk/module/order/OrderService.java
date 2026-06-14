@@ -98,6 +98,16 @@ public class OrderService {
                 new LambdaQueryWrapper<Order>().eq(Order::getOrderNo, orderNo));
     }
 
+    public void markPaid(String orderNo, String transactionId) {
+        Order order = getOrder(orderNo);
+        if (order == null) throw new IllegalArgumentException("订单不存在");
+        if (order.getPayStatus() == 1) return; // 幂等：已支付跳过
+        order.setPayStatus(1);
+        order.setOrderStatus(1);
+        order.setPaidAt(LocalDateTime.now());
+        orderMapper.updateById(order);
+    }
+
     public void cancelOrder(String orderNo) {
         Order order = getOrder(orderNo);
         if (order == null) throw new IllegalArgumentException("订单不存在");
