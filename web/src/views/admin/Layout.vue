@@ -11,6 +11,9 @@
         <el-menu-item index="/admin/finance">财务管理</el-menu-item>
         <el-menu-item index="/admin/withdraw">提现管理</el-menu-item>
         <el-menu-item index="/admin/content">内容管理</el-menu-item>
+        <el-menu-item index="/admin/admins">管理员</el-menu-item>
+        <el-menu-item index="/admin/roles">角色管理</el-menu-item>
+        <el-menu-item index="/admin/messages">留言管理</el-menu-item>
         <el-menu-item index="/admin/settings">系统设置</el-menu-item>
       </el-menu>
     </el-aside>

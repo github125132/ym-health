@@ -14,6 +14,9 @@ export default [
       { path: 'categories', component: () => import('../views/admin/CategoryList.vue') },
       { path: 'ads', component: () => import('../views/admin/AdList.vue') },
       { path: 'content', component: () => import('../views/admin/ContentList.vue') },
+      { path: 'admins', component: () => import('../views/admin/AdminList.vue') },
+      { path: 'roles', component: () => import('../views/admin/RoleList.vue') },
+      { path: 'messages', component: () => import('../views/admin/MessageList.vue') },
       { path: 'settings', component: () => import('../views/admin/Settings.vue') },
     ]
   }

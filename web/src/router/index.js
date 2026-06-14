@@ -20,6 +20,7 @@ const routes = [
   { path: '/member/address', component: () => import('../views/member/Address.vue'), meta: { requiresAuth: true } },
   { path: '/member/favorites', component: () => import('../views/member/Favorites.vue'), meta: { requiresAuth: true } },
   { path: '/member/edit-profile', component: () => import('../views/member/EditProfile.vue'), meta: { requiresAuth: true } },
+  { path: '/message', component: () => import('../views/shop/Message.vue') },
 ]
 
 const router = createRouter({ history: createWebHistory(), routes })

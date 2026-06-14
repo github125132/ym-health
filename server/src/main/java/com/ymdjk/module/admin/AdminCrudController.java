@@ -1,12 +1,21 @@
 package com.ymdjk.module.admin;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ymdjk.common.PageResult;
 import com.ymdjk.common.Result;
+import com.ymdjk.module.admin.entity.Admin;
+import com.ymdjk.module.admin.entity.Config;
+import com.ymdjk.module.admin.entity.Role;
+import com.ymdjk.module.admin.mapper.AdminMapper;
+import com.ymdjk.module.admin.mapper.ConfigMapper;
+import com.ymdjk.module.admin.mapper.RoleMapper;
 import com.ymdjk.module.content.entity.Ad;
 import com.ymdjk.module.content.entity.Content;
+import com.ymdjk.module.content.entity.Message;
 import com.ymdjk.module.content.mapper.AdMapper;
 import com.ymdjk.module.content.mapper.ContentMapper;
+import com.ymdjk.module.content.mapper.MessageMapper;
 import com.ymdjk.module.product.entity.Category;
 import com.ymdjk.module.product.mapper.CategoryMapper;
 import com.ymdjk.module.finance.entity.PayLog;
@@ -20,6 +29,7 @@ import com.ymdjk.module.order.mapper.OrderMapper;
 import com.ymdjk.module.product.entity.Product;
 import com.ymdjk.module.product.mapper.ProductMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -34,6 +44,11 @@ public class AdminCrudController {
     private final ContentMapper contentMapper;
     private final CategoryMapper categoryMapper;
     private final AdMapper adMapper;
+    private final AdminMapper adminMapper;
+    private final RoleMapper roleMapper;
+    private final PasswordEncoder passwordEncoder;
+    private final ConfigMapper configMapper;
+    private final MessageMapper messageMapper;
 
     @GetMapping("/products")
     public Result<?> listProducts(@RequestParam(defaultValue = "1") int page,
@@ -134,6 +149,63 @@ public class AdminCrudController {
     public Result<Void> deleteAd(@PathVariable Integer id) {
         adMapper.deleteById(id);
         return Result.success();
+    }
+
+    @GetMapping("/admins")
+    public Result<?> listAdmins(@RequestParam(defaultValue = "1") int page,
+                                @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(adminMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @PostMapping("/admins")
+    public Result<Void> saveAdmin(@RequestBody Admin admin) {
+        admin.setPassword(passwordEncoder.encode(admin.getPassword()));
+        if (admin.getId() != null) adminMapper.updateById(admin);
+        else adminMapper.insert(admin);
+        return Result.success();
+    }
+
+    @DeleteMapping("/admins/{id}")
+    public Result<Void> deleteAdmin(@PathVariable Integer id) {
+        adminMapper.deleteById(id);
+        return Result.success();
+    }
+
+    @GetMapping("/roles")
+    public Result<?> listRoles(@RequestParam(defaultValue = "1") int page,
+                               @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(roleMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @PostMapping("/roles")
+    public Result<Void> saveRole(@RequestBody Role role) {
+        if (role.getId() != null) roleMapper.updateById(role);
+        else roleMapper.insert(role);
+        return Result.success();
+    }
+
+    @DeleteMapping("/roles/{id}")
+    public Result<Void> deleteRole(@PathVariable Integer id) {
+        roleMapper.deleteById(id);
+        return Result.success();
+    }
+
+    @GetMapping("/config")
+    public Result<?> listConfig() {
+        return Result.success(configMapper.selectList(null));
+    }
+
+    @PutMapping("/config/{key}")
+    public Result<Void> updateConfig(@PathVariable String key, @RequestParam String value) {
+        Config cfg = configMapper.selectOne(new LambdaQueryWrapper<Config>().eq(Config::getConfigKey, key));
+        if (cfg != null) { cfg.setValue(value); configMapper.updateById(cfg); }
+        return Result.success();
+    }
+
+    @GetMapping("/messages")
+    public Result<?> listMessages(@RequestParam(defaultValue = "1") int page,
+                                  @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(messageMapper.selectPage(new Page<>(page, pageSize), null)));
     }
 
     private <T> PageResult<T> pageResult(Page<T> p) {
