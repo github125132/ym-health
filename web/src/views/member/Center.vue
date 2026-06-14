@@ -13,6 +13,7 @@
       <el-button style="width:100%;margin-bottom:10px" @click="router.push('/member/address')">收货地址</el-button>
       <el-button style="width:100%;margin-bottom:10px" @click="router.push('/member/favorites')">我的收藏</el-button>
       <el-button style="width:100%;margin-bottom:10px" @click="router.push('/member/edit-profile')">修改密码</el-button>
+      <el-button style="width:100%;margin-bottom:10px" @click="router.push('/member/rebate')">我的返利</el-button>
       <el-button style="width:100%;margin-bottom:10px" @click="router.push('/member/team')">我的团队</el-button>
       <el-button style="width:100%;margin-bottom:10px" @click="router.push('/member/finance')">财务明细</el-button>
       <el-button style="width:100%;margin-bottom:10px" @click="router.push('/member/withdraw')">申请提现</el-button>

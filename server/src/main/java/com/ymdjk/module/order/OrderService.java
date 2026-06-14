@@ -7,6 +7,7 @@ import com.ymdjk.module.cart.entity.Cart;
 import com.ymdjk.module.cart.mapper.CartMapper;
 import com.ymdjk.module.order.dto.CreateOrderRequest;
 import com.ymdjk.module.order.dto.ShipRequest;
+import com.ymdjk.module.finance.RebateService;
 import com.ymdjk.module.order.entity.Order;
 import com.ymdjk.module.order.entity.OrderItem;
 import com.ymdjk.module.order.mapper.OrderItemMapper;
@@ -28,6 +29,7 @@ public class OrderService {
     private final OrderItemMapper orderItemMapper;
     private final CartMapper cartMapper;
     private final ProductMapper productMapper;
+    private final RebateService rebateService;
 
     @Transactional
     public Order createOrder(String userId, CreateOrderRequest req) {
@@ -106,6 +108,7 @@ public class OrderService {
         order.setOrderStatus(1);
         order.setPaidAt(LocalDateTime.now());
         orderMapper.updateById(order);
+        rebateService.distribute(orderNo, order.getUserId(), order.getPayAmount());
     }
 
     public void cancelOrder(String orderNo) {
