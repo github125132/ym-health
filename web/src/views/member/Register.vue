@@ -33,8 +33,9 @@ const router = useRouter()
 const form = reactive({ phone: '', password: '', realName: '' })
 const loading = ref(false)
 const rules = {
-  phone: [{ required: true, message: '请输入手机号' }],
-  password: [{ required: true, message: '请输入密码' }]
+  phone: [{ required: true, message: '请输入手机号' }, { pattern: /^1\d{10}$/, message: '手机号格式不正确' }],
+  password: [{ required: true, message: '请输入密码' }, { min: 6, message: '密码至少6位' }],
+  realName: [{ required: true, message: '请输入真实姓名' }]
 }
 
 const handleRegister = async () => {

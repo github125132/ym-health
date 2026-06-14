@@ -33,6 +33,13 @@ const loadItems = async () => {
   items.value.forEach(i => { ratings[i.id] = 5; contents[i.id] = '' })
 }
 const submit = async () => {
+  if (!items.value.length) { ElMessage.warning('没有可评价的商品'); return }
+  for (const item of items.value) {
+    if (!contents[item.id] || !contents[item.id].trim()) {
+      ElMessage.warning('请填写评价内容')
+      return
+    }
+  }
   submitting.value = true
   try {
     for (const item of items.value) {
