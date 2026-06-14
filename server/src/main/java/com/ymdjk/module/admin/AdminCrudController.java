@@ -34,6 +34,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+import java.util.HashMap;
+
 @RestController
 @RequestMapping("/api/v1/admin")
 @RequiredArgsConstructor
@@ -228,6 +231,17 @@ public class AdminCrudController {
     public Result<?> listMessages(@RequestParam(defaultValue = "1") int page,
                                   @RequestParam(defaultValue = "20") int pageSize) {
         return Result.success(pageResult(messageMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @GetMapping("/dashboard")
+    public Result<?> dashboard() {
+        Map<String, Object> stats = new HashMap<>();
+        stats.put("memberCount", memberMapper.selectCount(null));
+        stats.put("productCount", productMapper.selectCount(null));
+        stats.put("orderCount", orderMapper.selectCount(null));
+        stats.put("pendingWithdraw", withdrawMapper.selectCount(
+            new LambdaQueryWrapper<Withdraw>().eq(Withdraw::getStatus, 0)));
+        return Result.success(stats);
     }
 
     private <T> PageResult<T> pageResult(Page<T> p) {
