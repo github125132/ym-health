@@ -1,7 +1,9 @@
 legacy/
 web/public/
+web/dist/
 node_modules/
 target/
 .idea/
 *.log
 .DS_Store
+.vscode/
