@@ -4,6 +4,8 @@
       <el-menu router :default-active="$route.path" style="height:100%">
         <el-menu-item index="/admin/dashboard">仪表盘</el-menu-item>
         <el-menu-item index="/admin/products">商品管理</el-menu-item>
+        <el-menu-item index="/admin/categories">分类管理</el-menu-item>
+        <el-menu-item index="/admin/ads">广告管理</el-menu-item>
         <el-menu-item index="/admin/orders">订单管理</el-menu-item>
         <el-menu-item index="/admin/members">会员管理</el-menu-item>
         <el-menu-item index="/admin/finance">财务管理</el-menu-item>

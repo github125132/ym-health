@@ -3,8 +3,12 @@ package com.ymdjk.module.admin;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ymdjk.common.PageResult;
 import com.ymdjk.common.Result;
+import com.ymdjk.module.content.entity.Ad;
 import com.ymdjk.module.content.entity.Content;
+import com.ymdjk.module.content.mapper.AdMapper;
 import com.ymdjk.module.content.mapper.ContentMapper;
+import com.ymdjk.module.product.entity.Category;
+import com.ymdjk.module.product.mapper.CategoryMapper;
 import com.ymdjk.module.finance.entity.PayLog;
 import com.ymdjk.module.finance.entity.Withdraw;
 import com.ymdjk.module.finance.mapper.PayLogMapper;
@@ -28,6 +32,8 @@ public class AdminCrudController {
     private final PayLogMapper payLogMapper;
     private final WithdrawMapper withdrawMapper;
     private final ContentMapper contentMapper;
+    private final CategoryMapper categoryMapper;
+    private final AdMapper adMapper;
 
     @GetMapping("/products")
     public Result<?> listProducts(@RequestParam(defaultValue = "1") int page,
@@ -89,6 +95,44 @@ public class AdminCrudController {
     public Result<Void> saveContent(@RequestBody Content content) {
         if (content.getId() != null) contentMapper.updateById(content);
         else contentMapper.insert(content);
+        return Result.success();
+    }
+
+    @GetMapping("/categories")
+    public Result<?> listCategories(@RequestParam(defaultValue = "1") int page,
+                                    @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(categoryMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @PostMapping("/categories")
+    public Result<Void> saveCategory(@RequestBody Category category) {
+        if (category.getId() != null) categoryMapper.updateById(category);
+        else categoryMapper.insert(category);
+        return Result.success();
+    }
+
+    @DeleteMapping("/categories/{id}")
+    public Result<Void> deleteCategory(@PathVariable Integer id) {
+        categoryMapper.deleteById(id);
+        return Result.success();
+    }
+
+    @GetMapping("/ads")
+    public Result<?> listAds(@RequestParam(defaultValue = "1") int page,
+                             @RequestParam(defaultValue = "20") int pageSize) {
+        return Result.success(pageResult(adMapper.selectPage(new Page<>(page, pageSize), null)));
+    }
+
+    @PostMapping("/ads")
+    public Result<Void> saveAd(@RequestBody Ad ad) {
+        if (ad.getId() != null) adMapper.updateById(ad);
+        else adMapper.insert(ad);
+        return Result.success();
+    }
+
+    @DeleteMapping("/ads/{id}")
+    public Result<Void> deleteAd(@PathVariable Integer id) {
+        adMapper.deleteById(id);
         return Result.success();
     }
 

@@ -11,6 +11,8 @@ export default [
       { path: 'members', component: () => import('../views/admin/MemberList.vue') },
       { path: 'finance', component: () => import('../views/admin/FinanceList.vue') },
       { path: 'withdraw', component: () => import('../views/admin/WithdrawList.vue') },
+      { path: 'categories', component: () => import('../views/admin/CategoryList.vue') },
+      { path: 'ads', component: () => import('../views/admin/AdList.vue') },
       { path: 'content', component: () => import('../views/admin/ContentList.vue') },
       { path: 'settings', component: () => import('../views/admin/Settings.vue') },
     ]
