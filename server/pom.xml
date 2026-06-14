@@ -24,6 +24,7 @@
         <hutool.version>5.8.25</hutool.version>
         <weixin-java-pay.version>4.6.0</weixin-java-pay.version>
         <lombok.version>1.18.34</lombok.version>
+        <alipay-sdk.version>4.40.852.ALL</alipay-sdk.version>
     </properties>
 
     <dependencies>
@@ -106,6 +107,13 @@
             <version>${weixin-java-pay.version}</version>
         </dependency>
 
+        <!-- Alipay -->
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>${alipay-sdk.version}</version>
+        </dependency>
+
 
         <!-- Test -->
         <dependency>
@@ -131,4 +139,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>Alibaba Maven Repository</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
 </project>

@@ -1,6 +1,7 @@
 server:
   port: 8080
 spring:
+  mandatory-file-encoding: UTF-8
   datasource:
     url: jdbc:mysql://localhost:3306/youmengjiankang?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
@@ -23,3 +24,8 @@ pay:
     mch-id: ${WX_MCH_ID:}
     api-v3-key: ${WX_API_V3_KEY:}
     private-key-path: ${WX_PRIVATE_KEY_PATH:}
+  alipay:
+    app-id: ${ALIPAY_APP_ID:}
+    private-key: ${ALIPAY_PRIVATE_KEY:}
+    alipay-public-key: ${ALIPAY_PUBLIC_KEY:}
+    notify-url: ${ALIPAY_NOTIFY_URL:}

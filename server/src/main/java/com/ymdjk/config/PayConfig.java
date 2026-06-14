@@ -1,5 +1,7 @@
 package com.ymdjk.config;
 
+import com.alipay.api.AlipayClient;
+import com.alipay.api.DefaultAlipayClient;
 import com.github.binarywang.wxpay.config.WxPayConfig;
 import com.github.binarywang.wxpay.service.WxPayService;
 import com.github.binarywang.wxpay.service.impl.WxPayServiceImpl;
@@ -25,5 +27,14 @@ public class PayConfig {
         WxPayService service = new WxPayServiceImpl();
         service.setConfig(config);
         return service;
+    }
+
+    @Bean
+    public AlipayClient alipayClient(@Value("${pay.alipay.app-id:}") String appId,
+                                      @Value("${pay.alipay.private-key:}") String privateKey,
+                                      @Value("${pay.alipay.alipay-public-key:}") String alipayPublicKey) {
+        return new DefaultAlipayClient(
+            "https://openapi.alipay.com/gateway.do",
+            appId, privateKey, "json", "UTF-8", alipayPublicKey, "RSA2");
     }
 }
