@@ -1,1 +1,0 @@
-import{_ as o,c as n,j as s,w as a,g as c,h as r,d}from"./index-C6FHxGVS.js";const l={},_={style:{padding:"15px"}};function p(f,e){const t=c("el-card");return r(),n("div",_,[s(t,null,{default:a(()=>[...e[0]||(e[0]=[d("h3",null,"我的团队",-1)])]),_:1})])}const m=o(l,[["render",p]]);export{m as default};

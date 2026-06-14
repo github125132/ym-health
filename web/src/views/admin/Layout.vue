@@ -1,6 +1,6 @@
 <template>
   <el-container style="height:100vh">
-    <el-aside width="220px">
+    <el-aside :width="sidebarOpen ? '220px' : '0'" style="overflow:hidden;transition:width .3s">
       <el-menu router :default-active="$route.path" style="height:100%">
         <el-menu-item index="/admin/dashboard">仪表盘</el-menu-item>
         <el-menu-item index="/admin/products">商品管理</el-menu-item>
@@ -17,6 +17,16 @@
         <el-menu-item index="/admin/settings">系统设置</el-menu-item>
       </el-menu>
     </el-aside>
-    <el-main><router-view /></el-main>
+    <el-container>
+      <el-header style="display:flex;align-items:center;background:#fff;border-bottom:1px solid #eee;height:48px;padding:0 16px">
+        <el-button @click="sidebarOpen = !sidebarOpen" text style="font-size:20px;padding:0">☰</el-button>
+        <span style="margin-left:12px;font-weight:600">管理后台</span>
+      </el-header>
+      <el-main><router-view /></el-main>
+    </el-container>
   </el-container>
 </template>
+<script setup>
+import { ref } from 'vue'
+const sidebarOpen = ref(window.innerWidth > 768)
+</script>

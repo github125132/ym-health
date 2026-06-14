@@ -1,0 +1,260 @@
+html {font-size:62.5%;}
+* {margin:0;padding:0;-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;}
+		  a {text-decoration:none;color:#333;}
+		  a:hover {text-decoration:underline;}
+ul,li {list-style-type:none;}
+body{
+	max-width: 640px;
+	margin: 0 auto;
+	margin-bottom: 0.6rem;
+	padding-bottom:0.6rem;
+	font-size: 1.6rem;
+}
+.s-top {width:100%;height:3.6rem;line-height:3.6rem;background:#39ad03;color:#fff;position:relative;text-align:center;}
+.s-top a {display:block;width:1.6rem;height:1.6rem;position:absolute;right:1rem;top:1rem;background-image:url(../img/back.png);background-size:100% 100%;text-indent:-9999px;}
+.s-top span {}
+.s-top  i {display:block;width:3.6rem;height:3.6rem;background-size:80% 80%;vertical-align:middle;top:0;left:1rem;background-position:center left;background-repeat:no-repeat;position:absolute;}
+
+img {border:none 0;}
+.clear {clear:both;}
+.main-t {height:4rem;line-height:4rem;text-align:center;font-size:2rem;}
+.main-t  a {color:#8b510c;}
+.prolist {padding:0.5rem;display:block;text-align:center;}
+.bgf {padding:1.4rem 0;}
+.bgf .price {display:block;font-size:1.6rem;line-height:2.2rem;text-align:center;color:red;padding-top:1rem;}
+.bgf .price .price-ico {color:#333;font-size:1.4rem;}
+.bgf .title {display:block;font-size:1.4rem;line-height:2.2rem;text-align:center;width:88%;margin:0 auto;height:4.4rem;}
+.bgf .title span {display:block;font-size:1.8rem;line-height:2.2rem;text-align:center;width:88%;margin:0 auto;color:red;}
+.bgf  .btn {display:block;margin:1.5rem auto 0;background:#39ad03;    color: #ffffff;
+    border: none;
+    border-radius: 1rem;
+    font-family: Microsoft YaHei;
+    letter-spacing: 0.2em;
+    padding: 0.5rem 0.8rem;
+    width: 80%;}
+.prolist span .pic {display:block;width:75%;margin:0 auto;}
+
+
+#foot {width: 640px;position: fixed;height:70px;bottom:0;background: #fff;line-height: 30px;-moz-box-shadow:0 -4px 5px -3px #cccccc; -webkit-box-shadow:0 -4px 5px -3px #cccccc; box-shadow:0 -4px 5px -3px #cccccc;left:50%;margin-left:-320px;}
+#foot ul {width:98%;margin:0 auto;padding-top:10px;}
+#foot ul li {width:25%;text-align: center;float:left;}
+#foot span {display: block;width:28px;height:28px;margin:0 auto;background-size: 100% 100%;}
+#foot a {font-size: 15px;color:#404040;text-decoration: none;}
+#foot a #ico1 {background-image: url(../img/ico1.png);}
+
+#foot a #icos2 {background-image: url(../img/icos2.png);}
+
+#foot a #icos3 {background-image: url(../img/icos3.png);}
+
+#foot a #icos4 {background-image: url(../img/icos4.png);}
+
+
+
+
+.prolist span .pic img {display:block;width:100%;margin:0 auto;}
+.pro-left {width:100%;floaT:left;}
+.pro-right {width:100%;float:right;}
+
+.prolist .main-pl {display:block;width:50%;float:left;padding:0.5rem;}
+.shop-nav {height:85px;background:#fff;width:100%;position:fixed;bottom:0;padding:4px 10px;max-width:640px;left:0;}
+.logo-w {display: block;width:100%;}
+.shop-nav a {width:25%;padding:0 10px;display:block;float:left;}
+.shop-nav a img {display:block;width:75%;margin:0 auto;max-width:54px;}
+.shop-nav .quick-a {display:block;width:100%;color:#000;text-align:center;font-size:1.8rem;}
+.list-group {
+    margin: 0 auto;
+    padding:15px;
+}
+.list-group li {
+ background-color: #fff;
+    border: 1px solid #ddd;
+    display: block;
+    margin-bottom: -1px;
+    padding: 10px 15px;
+    position: relative;
+     border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.list-group li a {color:#333;display:block;width:100%;line-height:16px;height:18px;}
+.well {
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    border: solid 1px #e5e6e6;
+    box-shadow: 0px 3px 5px #d2d6da;
+    position: relative;
+	margin:5px;
+}
+.well input#Button1 {display:block;margin:5px auto;background:#39ad03;    color: #ffffff;
+    border: none;
+    border-radius: 1em;
+    font-family: Microsoft YaHei;
+    letter-spacing: 0.2em;
+    padding: 0.5em 3em;
+    width: 80%;}
+#procon img {
+    width: 100%;
+    border: 0;
+    vertical-align: bottom;
+}
+.well h1 {padding-top:10px;}
+.goods-info img {
+    width: 100%;
+    border: 0;
+    vertical-align: bottom;
+}
+.goods-info img.photo {width:75%;margin:1rem auto 0;}
+.tab-t {display:block;background:#cd9a65;
+	height:40px;width:100%;overflow:hidden;line-height:38px;
+}
+.tab-t li:first-child {margin-left:-2px;}
+.tab-t li {display:block;text-align:center;list-style-type:none;width:33.33%;border-lefT:2px solid #fff;floaT:left;height:40px;line-height:38px;color:#fff;font-size:24px;}
+.tab-t li.hover {width:33.34%;background:#b16f41;}
+.swiper-slide  a,.swiper-slide img {display:block;}
+
+
+.goods-info {text-align:center;}
+.desc {margin-top:5px;}
+.cart_item_text {font-size:1.6rem;line-height:3rem;}
+.pay-info {width:100px;height:35px;margin:0 auto;}
+.desc .price {font-size:1.6rem;line-height:2.8rem;color:red;}
+.desc .price .price-ico {font-size:1.2rem;color:#333;}
+.list-z {height:184px;padding:10px;display: block;border-bottom: 1px solid #ccc;}
+    	.list-title {font-size: 16px;font-weight: 600;color:#000;display: block;line-height: 2.0;}
+    	.list-jg { color: #d32048;font-size: 14px;display: block;}
+    	.list-jg .price-ico{font-size: 12px;font-weight: normal;margin-right: 3px;}
+    	.list-title a {color:#000;}
+    	.list-z .pic {display: block;width:100px;height:100px;float:left;margin-right:20px;margin-top:4px;overflow:hidden;}
+		.list-z .list-zw {position:relative;}
+		.list-z .list-zw img {width:100px;display: block;height:100px;}
+		.list-z #shengji img {margin-left:-200px;}
+		.list-z .list-zw .banben {position:absolute;left: 120px;top: 24px;color: red;font-size: 16px;}
+		.list-z .list-zw .zhuangtai {position:absolute;display:none;}
+		.list-z .list-zw .jiage {position:absolute;left:120px;top:76px;font-size:16px;color:red;}
+		.list-z .list-zw .list-sj {display:none;}
+		.list-z #shengji .list-sj {display:block;}
+		.list-z #shengji .list-zc {display:none;}
+		.list-z .list-zw .jiage .price-ico {font-size:12px;color:#333;margin-right:4px;}
+    	.list-z .content {overflow:hidden;zoom:1;}
+    	.list-z .content .title {display: block;color:#333;font-size: 14px;line-height: 2.0;height:28px;overflow:hidden;margin-bottom:20px;}
+    	.color1 {color:#d32048;}
+    	.geshu {display: block;line-height: 2.0;}
+.t_css {font-size:1.6rem;height:2.8rem;line-height:2.8rem;text-align:center;}
+table td {padding:0 0.3rem;}
+.control-label {
+float: left;
+width: 100px;
+padding-top: 5px;
+text-align: right;}
+.controls {margin-left:110px;}
+.control-group {clear:both;padding:0.4rem 0;}
+.control-group input {    width: 90%;
+    min-height: 30px;}
+.controls textarea {width:90%;}
+.page-header {padding:0 1rem 1rem;}
+.page-header #infotitle {text-align:center;padding-bottom:0.4rem;}
+#mylink {padding:0 1rem;}
+.kailist .list-tb {display:block;border-top:1px solid #ccc;height:30px;line-height:30px;left:1px solid #ccc;}
+.kailist .list-tb  .list-tb-l {width:60%;floaT:left;border-right:1px solid #ccc;}
+.kailist .list-tb  .list-tb-r {width:40%;floaT:left;border-right:1px solid #ccc;}
+.kailist {border-left:1px solid #ccc;border-bottom:1px solid #ccc;text-align:center;widtH:80%;margin:0 auto;display:block;}
+.href {
+    position: fixed;
+    bottom: 15%;
+    right: 10px;
+    zoom: 1;
+    z-index: 1000;
+}
+.href a {
+    display: block;
+    margin-bottom: .5em;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?rbslig');
+  src:  url('../fonts/icomoon.eot?rbslig#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?rbslig') format('truetype'),
+    url('../fonts/icomoon.woff?rbslig') format('woff'),
+    url('../fonts/icomoon.svg?rbslig#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-guan:before {
+  content: "\e900";
+}
+.icon-help:before {
+  content: "\e901";
+}
+.icon-lie:before {
+  content: "\e902";
+}
+.icon-qian:before {
+  content: "\e903";
+}
+.icon-my:before {
+  content: "\e904";
+}
+.icon-liu:before {
+  content: "\e905";
+}
+.icon-she:before {
+  content: "\e906";
+}
+.icon-bi:before {
+  content: "\e907";
+}
+.icon-ma:before {
+  content: "\e908";
+}
+
+.list-group span {font-size:18px;float:left;margin-right:6px;}
+#pagediv {background:url(../img/bg3.png);background-size:100% 100%;clear:both;padding:0.8em 1em;}
+#pagediv a {display:block;
+color: #39ad03;
+border: solid 1px #39ad03;
+padding: 0.3em 2em;
+text-align: center;
+width: 30%;
+-webkit-border-radius: 5px;
+}
+.spage {float:left;}
+.xpage {float:right;}
+#infolist br {display:none;}
+@media(min-width:700px) {
+	.shop-nav{left:50%;margin-left:-320px;}
+	.href{right:50%;margin-right:-300px;}
+	
+}
+@media(max-width:700px) {
+	#pagediv a {width:45%;padding:0.3em 1.5em;}
+	.shop-nav .quick-a {font-size: 1.6rem;}
+	#foot {width:100%;left:0;margin-left:0;}
+}

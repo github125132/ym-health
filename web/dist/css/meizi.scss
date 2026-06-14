@@ -1,0 +1,170 @@
+$m-color:#1983d1;
+body {
+    background-color: #f5f5f5!important;
+}
+.headbar {
+    background: $m-color;
+}
+.head-nav {
+    text-align: center;
+    padding-bottom:0.4rem;
+    i {
+        display: block;
+        width:24px;
+        height:24px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-left:auto;
+        margin-right:auto;
+        &.ico-1 {
+            background-image: url(../img/ico-1.png);
+        }
+        &.ico-2 {
+            background-image: url(../img/ico-2.png);
+        }
+        &.ico-3 {
+            background-image: url(../img/ico-3.png);
+        }
+        &.ico-4 {
+            background-image: url(../img/ico-4.png);
+        }
+    }
+    a {
+        color:#fff;
+        text-align: center;
+        display: inline-block;
+        line-height: 1.5;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+.main-nav {
+    background: #ffffff;
+    text-align: center;
+    padding-top:1rem;
+    .am-g {
+        padding-top:1rem;
+        padding-bottom:1rem;
+    }
+    i {
+        display: block;
+        width:24px;
+        height:24px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-left:auto;
+        margin-right:auto;
+        &.ico-5 {
+            background-image: url(../img/ico-5.png);
+        }
+        &.ico-6 {
+            background-image: url(../img/ico-6.png);
+        }
+        &.ico-7 {
+            background-image: url(../img/ico-7.png);
+        }
+        &.ico-8 {
+            background-image: url(../img/ico-8.png);
+        }
+        &.ico-9 {
+            background-image: url(../img/ico-9.png);
+        }
+        &.ico-10 {
+            background-image: url(../img/ico-10.png);
+        }
+        &.ico-11 {
+            background-image: url(../img/ico-11.png);
+        }
+        &.ico-12 {
+            background-image: url(../img/ico-12.png);
+        }
+    }
+    a {
+        color:#323232;
+        text-align: center;
+        display: inline-block;
+        line-height: 1.5;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+.main-news {
+    background: #fff;
+    margin-top:1rem;
+    position: relative;
+    background-image: url(../img/news-bg.png);
+    background-repeat: no-repeat;
+    background-size: 6rem;
+    background-position: 1.5rem center;
+    padding:1rem 0;
+
+    .am-list {
+        margin-left:8.4rem;
+        margin-right:6rem;
+        margin-bottom: 0;
+        li {
+            margin-bottom:0;
+            border:0 none;
+            &:before {
+                content:'';
+                display: block;
+                width:.4rem;
+                height:.4rem;
+                border-radius: 50%;
+                background: #323232;
+                margin-right:.6rem;
+                position: absolute;
+                left:0;
+                top:calc(50% - 0.2rem);
+            }
+            a {
+                padding:0;
+                line-height:2;
+                color:#323232;
+                margin-left:1rem;
+                font-size:1.4rem;
+            }
+        }
+    }
+    .more {
+        position: absolute;
+        top:calc(50% - 20px);
+        right:1.5rem;
+        padding-left:1.6rem;
+        height:40px;
+        &:before {
+            content:'';
+            display: block;
+            width:1rem;
+            height:1rem;
+            border-radius: 50%;
+            background: #ff362f;
+            margin-right:.6rem;
+            position: absolute;
+            left:0;
+            top:calc(50% - 0.5rem);
+        }
+        a {
+            display: block;
+            i:before {
+            font-size:40px;
+            color:#909090;
+            }
+        } 
+    }
+}
+.main-banner {
+    background: #fff;
+    margin-top:1rem;
+}
+.main-shop {
+    background: #fff;
+    padding:1.25rem;
+    margin-top:1rem;
+    img {
+        width:100%;
+        height:auto;
+    }
+}

@@ -1,0 +1,21 @@
+body {
+  background: url(../images/login_bg.png) no-repeat center / 100% 100%;
+  padding-top: 2.66666667rem;
+}
+.tangle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-width: 0 0.66666667rem 0.6rem;
+  border-style: solid;
+  border-color: transparent transparent rgba(245, 245, 245, 0.15);
+  display: none;
+}
+.active .tangle {
+  display: block;
+}
+::-webkit-input-placeholder {
+  color: #fff;
+}

@@ -1,0 +1,29 @@
+
+BODY { 
+COLOR: #000000; 
+FONT-FAMILY: "ËÎÌו"; 
+FONT-SIZE: 12px; 
+TEXT-DECORATION: none 
+} 
+
+A:link {
+	COLOR: #000000;
+	text-decoration: none;
+}
+A:visited {
+	COLOR: #000000;
+	text-decoration: none;
+}
+A:hover { COLOR: #FF0000} 
+
+A:active { COLOR: #FF0000; TEXT-DECORATION: none } TD {
+	FONT-SIZE: 9pt;
+	LINE-HEIGHT: 12pt;
+	FONT-FAMILY: "ËÎÌו";
+}
+
+.tablehead{
+color:#0099CC;
+font-weight:bold;
+
+}

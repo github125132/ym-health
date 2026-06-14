@@ -1,0 +1,104 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,miui,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+}
+.login-box {
+	height: 100%;
+	width: 100%;
+	background: #fff;
+	color: #242629;
+	font-size: .14rem;
+	margin: 0 auto;
+	max-width: 750px;
+	position: relative;
+	background:  linear-gradient(143.42deg, rgba(0, 125, 139, 1) 0%, rgba(26, 146, 136, 0.84) 12.5%, rgba(78, 187, 131, 0.52) 40.29%, rgba(115, 217, 127, 0.29) 65.14%, rgba(138, 236, 125, 0.15) 85.89%, rgba(147, 243, 125, 0.1) 100%);
+	background-size: 100% 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.logo img {
+	display: block;
+	width: 100%;
+}
+.logo {
+	width: 60%;
+	margin: 0 auto;
+}
+.am-form {
+	margin: 0.35rem auto 0;
+	background: #fff;
+	position: relative;
+	z-index:9;
+	box-shadow: 0 0.06rem 0.20rem rgba(88,155,71,0.35);
+	padding: 0.25rem 0.15rem 0;
+	/*border-top: 5px solid #47914e;
+	border-bottom: 2px solid #dfffd7;*/
+	width: calc(100% - 0.90rem);border-radius: 10px;
+}
+.am-form-group {
+	margin-top: 0.10rem;
+	border-bottom: #f4f4f4;
+	padding-bottom: 0.10rem;
+	position: relative;
+}
+.am-form-group > label {
+	display: inline-block;
+	width: 0.36rem;
+	text-align: right;
+	height: 0.30rem;
+	line-height: 0.30rem;
+	font-size: 0.14rem;
+}
+.am-form-group > label i {
+	font-size: 0.20rem;
+	line-height: 0.40rem;
+}
+.am-form-group input {
+	border: 0;
+	background: transparent;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0.30rem;
+	font-size: 0.15rem;
+	text-indent: 0.10rem;
+}
+.am-form-group input[type=submit] {
+	position: absolute;
+	width: auto;!important;
+	top: 0;
+	right: 0;
+}
+.am-form-group input:focus{
+	outline: none;
+}
+#Button1 {
+	border: 0;
+	display: block;
+	line-height: 0.45rem;
+	margin-top: 0.30rem;
+	background: linear-gradient(177.88deg, rgba(255, 179, 46, 1) 0%, rgba(244, 139, 48, 1) 29.47%, rgba(235, 106, 51, 1) 58.82%, rgba(229, 87, 52, 1) 83.33%, rgba(228, 80, 53, 1) 100%);
+	box-shadow: 0 0.06rem 0.20rem rgba(164,144,84,0.35);
+	text-align: center;
+	color: #fff;
+	font-size: 0.15rem;
+	width: 100%;
+	font-weight: 700;
+	border-radius: 20px;
+}
+.text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.25rem 0.20rem;
+}
+.text a {
+	font-size: 0.14rem;
+	color: #525254;
+	text-decoration: none;
+}

@@ -1,0 +1,243 @@
+body {
+  background-color: #f5f5f5 !important;
+  font-size: 1.4rem;
+  padding-bottom: 52px; }
+
+.headbar {
+  background: #000100; }
+  .headbar .search {
+    padding: 1rem; }
+    .headbar .search .search-z {
+      position: relative;
+      width: calc(100% - 100px);
+      margin: 0 auto; }
+    .headbar .search input {
+      width: 100%;
+      border: 0;
+      background: #fff;
+      padding: 0 12px;
+      border-radius: 6px;
+      height: 26px; }
+    .headbar .search a {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 4px;
+      right: 1px;
+      line-height: 24px;
+      display: block; }
+      .headbar .search a:before {
+        font-size: 16px;
+        vertical-align: middle;
+        color: #333;
+        position: absolute;
+        right: 4px;
+        top: 1px; }
+
+.head-nav {
+  text-align: center;
+  padding-bottom: 0.4rem; }
+  .head-nav span {
+    width: 24px;
+    height: 24px;
+    margin: 4px auto 0;
+    display: block;
+    line-height: 24px; }
+    .head-nav span:before {
+      font-size: 22px;
+      vertical-align: middle; }
+  .head-nav a {
+    color: #f5e158;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.5;
+    margin-left: auto;
+    margin-right: auto; }
+
+.main-nav {
+  background: #ffffff;
+  text-align: center;
+  padding-top: 1rem; }
+  .main-nav .am-g {
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+  .main-nav i {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto; }
+    .main-nav i.ico-5 {
+      background-image: url(../img/ico-5.png); }
+    .main-nav i.ico-6 {
+      background-image: url(../img/ico-6.png); }
+    .main-nav i.ico-7 {
+      background-image: url(../img/ico-7.png); }
+    .main-nav i.ico-8 {
+      background-image: url(../img/ico-8.png); }
+    .main-nav i.ico-9 {
+      background-image: url(../img/ico-9.png); }
+    .main-nav i.ico-10 {
+      background-image: url(../img/ico-10.png); }
+    .main-nav i.ico-11 {
+      background-image: url(../img/ico-11.png); }
+    .main-nav i.ico-12 {
+      background-image: url(../img/ico-12.png); }
+  .main-nav a {
+    color: #323232;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.5;
+    margin-left: auto;
+    margin-right: auto; }
+
+.main-news {
+  background: #fff;
+  margin-top: 1rem;
+  position: relative;
+  background-image: url(../img/news-bg.png);
+  background-repeat: no-repeat;
+  background-size: 6rem;
+  background-position: 1.5rem center;
+  padding: 1rem 0; }
+  .main-news .am-list {
+    margin-left: 8.4rem;
+    margin-right: 6rem;
+    margin-bottom: 0; }
+    .main-news .am-list li {
+      margin-bottom: 0;
+      border: 0 none; }
+      .main-news .am-list li:before {
+        content: '';
+        display: block;
+        width: .4rem;
+        height: .4rem;
+        border-radius: 50%;
+        background: #323232;
+        margin-right: .6rem;
+        position: absolute;
+        left: 0;
+        top: calc(50% - 0.2rem); }
+      .main-news .am-list li a {
+        padding: 0;
+        line-height: 2;
+        color: #323232;
+        margin-left: 1rem;
+        font-size: 1.4rem; }
+  .main-news .more {
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 1.5rem;
+    padding-left: 1.6rem;
+    height: 40px; }
+    .main-news .more:before {
+      content: '';
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: #ff362f;
+      margin-right: .6rem;
+      position: absolute;
+      left: 0;
+      top: calc(50% - 0.5rem); }
+    .main-news .more a {
+      display: block; }
+      .main-news .more a i:before {
+        font-size: 40px;
+        color: #909090; }
+
+.main-banner {
+  background: #fff;
+  margin-top: 1rem; }
+
+.main-shop {
+  background: #fff;
+  padding: 1rem;
+  margin-top: 1rem; }
+  .main-shop .main-shop-t {
+    line-height: 2;
+    color: #323232;
+    margin-bottom: 1rem; }
+    .main-shop .main-shop-t small {
+      color: #939393;
+      padding-left: 0.6rem; }
+  .main-shop .main-shop-z {
+    -moz-box-shadow: 0 0 2px #ccc;
+    -webkit-box-shadow: 0 0 2px #9ccc99;
+    box-shadow: 0 0 2px #ccc;
+    border-radius: 0.3rem;
+    padding: 0.6rem; }
+    .main-shop .main-shop-z a {
+      text-align: center; }
+      .main-shop .main-shop-z a .title {
+        color: #323232;
+        word-wrap: normal;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden; }
+      .main-shop .main-shop-z a .jiage {
+        font-size: 1.2rem;
+        color: #939393; }
+        .main-shop .main-shop-z a .jiage span {
+          color: #d85539; }
+    .main-shop .main-shop-z .am-u-sm-4 {
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+      padding-left:0.6rem;
+      padding-right:0.6rem;
+    }
+    .main-shop .main-shop-z .am-g:first-child {
+      border-bottom: 1px solid #f4f4f4; }
+  .main-shop img {
+    width: 100%;
+    height: calc(33.33vw - 2.1rem); }
+
+.am-navbar-default .am-navbar-nav {
+  background: #fafbfd;
+  border-top: #e1e2e4; }
+  .am-navbar-default .am-navbar-nav a {
+    color: #848685; }
+    #reinfodiv {
+      position:fixed;
+      width:100vw;
+      height:100%;
+      top:0;
+      left:0;
+      background:url(../app/btm.png);
+      z-index:9999;
+    }
+    #reinfodiv .guan {
+      position:fixed;
+      width:100vw;
+      height:100%;
+      top:0;
+      left:0;
+      background-image:url(../app/guan.png);
+      background-repeat:no-repeat;
+      background-position:center 88vw;
+      background-size:30px 30px;
+      z-index:99999;
+    }
+    .reinfodiv_z {
+      position:absolute;
+      width:70vw;
+      height:59.3vw;
+      top:25vw;
+      left:calc(50% - 35vw);
+      background:url(../img/wszl.png) no-repeat;
+      background-size:100% 100%;
+      z-index:199999;
+    }
+    .reinfodiv_z a {
+      display: block;
+      width:100%;
+      height:100%;
+      text-indent: -9999px;
+    }    
+
+
+/*# sourceMappingURL=meizi.css.map */

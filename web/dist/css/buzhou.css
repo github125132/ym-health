@@ -1,0 +1,90 @@
+.sui-steps {
+    font-size: 0px;
+    overflow: hidden;
+    line-height: 0px;
+	margin: 0px 0px 18px;
+	display: table;
+width: 100%;
+}
+.sui-steps .wrap {
+    display: table-cell;
+}
+.sui-steps .wrap > div {
+    width: 100%;
+    height: 32px;
+    display: inline-block;
+    line-height: 32px;
+    vertical-align: top;
+    font-size: 12px;
+    position: relative;
+}
+.sui-steps .finished {
+    background-color: #28a3ef;
+    color: #ffffff;
+}
+.sui-steps .wrap > div > label {
+    margin-left: 26px;
+    cursor: default;
+}
+.sui-steps .round {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 16px;
+}
+.sui-steps .finished .round {
+    background-color: #ffffff;
+    background-color: transparent\9;
+    color: #28a3ef;
+}
+.sui-steps .triangle-right-bg {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 16px;
+    position: absolute;
+    right: -31px;
+    z-index: 1;
+    border-width: 20px;
+    right: -40px;
+    border-color: transparent transparent transparent #FFF;
+    top: -4px;
+}
+.sui-steps .finished .triangle-right {
+    border-color: transparent transparent transparent #28a3ef;
+}
+.sui-steps .triangle-right {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 16px;
+    position: absolute;
+    right: -31px;
+    z-index: 1;
+}
+.sui-steps .todo {
+    background-color: #eeeeee;
+    color: #999999;
+}
+.sui-steps .todo .round {
+    background-color: #ffffff;
+    background-color: transparent\9;
+}
+.sui-steps .round + span::before {
+    content: '\00a0';
+}
+.sui-steps .current .round {
+    background-color: #ffffff;
+    color: #4cb9fc;
+    background-color: transparent\9;
+}
+.sui-steps .current {
+	background-color: #4cb9fc;
+	color: #ffffff;
+}
